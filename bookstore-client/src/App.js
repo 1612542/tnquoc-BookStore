@@ -1,14 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+// import logo from './logo.svg';
 import './App.css';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import Appbar from './components/AppBar';
+import BookCard from './components/BookCard';
 
 // function App() {
 //   return (
@@ -31,45 +29,54 @@ import MenuIcon from '@material-ui/icons/Menu';
 //   );
 // }
 
-class Timer extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = { seconds: 0 };
+const styles = () => ({
+	root: {
+		// backgroundColor: '#F7F7F6'
+		backgroundColor: '#F2F2F2'
+	},
+	vl: {
+		display: 'block',
+		width: '2px',
+		backgroundColor: '#E5E5E5',
+		height: '200vh'
 	}
+});
 
-	tick() {
-		this.setState((state) => ({
-			seconds: state.seconds + 1
-		}));
-	}
-
-	componentDidMount() {
-		this.interval = setInterval(() => this.tick(), 1000);
-	}
-
-	componentWillUnmount() {
-		clearInterval(this.interval);
-	}
-
-	render() {
-		return <div>seconds: {this.state.secon}</div>;
-	}
-}
-
-const Appbar = () => {
+const App = ({ classes }) => {
 	return (
-		<AppBar position="static">
-			<Toolbar>
-				<IconButton edge="start" color="inherit" aria-label="menu">
-					<MenuIcon />
-				</IconButton>
-				<Typography variant="h6">News</Typography>
-				<Button color="inherit">Login</Button>
-			</Toolbar>
-		</AppBar>
+		<div>
+			<div className={classes.root}>
+				<Appbar />
+				<Container style={{ width: '80%' }}>
+					{/* <Typography component="div" style={{ backgroundColor: 'white', height: '100vh' }} /> */}
+					<div style={{ display: 'block', backgroundColor: 'white', height: '200vh' }}>
+						<div style={{ display: 'flex' }}>
+							<div id="sidebar" style={{ paddingLeft: '10px', paddingRight: '10px', width: '20%' }} />
+							<div className={classes.vl} />
+							<div id="mainContent" style={{ paddingLeft: '10px' }}>
+								<Fragment>
+									<Grid container direction="row" spacing={2}>
+										<Grid item xs>
+											<BookCard />
+										</Grid>
+										<Grid item xs>
+											<BookCard />
+										</Grid>
+										<Grid item xs>
+											<BookCard />
+										</Grid>
+										<Grid item xs>
+											<BookCard />
+										</Grid>
+									</Grid>
+								</Fragment>
+							</div>
+						</div>
+					</div>
+				</Container>
+			</div>
+		</div>
 	);
 };
 
-const App = () => {};
-
-export default App;
+export default withStyles(styles)(App);
