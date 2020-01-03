@@ -2,11 +2,13 @@ import React, { Fragment } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Container from '@material-ui/core/Container';
+import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import Appbar from './components/AppBar';
-import BookCard from './components/BookCard';
+import RowOfBookCard from './components/RowOfBookCard';
+import AdSlideShow from './components/AdSlideShow';
 
 // function App() {
 //   return (
@@ -51,24 +53,17 @@ const App = ({ classes }) => {
 					{/* <Typography component="div" style={{ backgroundColor: 'white', height: '100vh' }} /> */}
 					<div style={{ display: 'block', backgroundColor: 'white', height: '200vh' }}>
 						<div style={{ display: 'flex' }}>
-							<div id="sidebar" style={{ paddingLeft: '10px', paddingRight: '10px', width: '20%' }} />
+							<div id="sidebar" style={{ paddingLeft: '10px', paddingRight: '10px', width: '25%' }} />
 							<div className={classes.vl} />
-							<div id="mainContent" style={{ paddingLeft: '10px' }}>
+							<Divider orientation="vertical" />
+							<div id="mainContent">
 								<Fragment>
-									<Grid container direction="row" spacing={2}>
-										<Grid item xs>
-											<BookCard />
-										</Grid>
-										<Grid item xs>
-											<BookCard />
-										</Grid>
-										<Grid item xs>
-											<BookCard />
-										</Grid>
-										<Grid item xs>
-											<BookCard />
-										</Grid>
-									</Grid>
+									<div id="slideshow" style={{ marginBottom: '10px', marginTop: '5px' }}>
+										<AdSlideShow />
+									</div>
+									<RowOfBookCard />
+									<RowOfBookCard />
+									<RowOfBookCard />
 								</Fragment>
 							</div>
 						</div>

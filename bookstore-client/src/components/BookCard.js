@@ -7,20 +7,26 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = () => ({
 	card: {
 		padding: 'none',
-		maxWidth: '180px',
+		minWidth: '25%',
+		maxWidth: '250px',
 		'&:hover': {
 			cursor: 'pointer',
 			boxShadow: '5px 5px 5px 5px #E2E2E2, 5px 5px 5px 5px #E2E2E2'
 		}
+	},
+	imgCard: {
+		minWidth: '75%',
+		maxWidth: '150px',
+		height: '180px'
 	}
 });
 
 const BookCard = ({ classes }) => {
 	return (
-		<Card className={classes.card}>
+		<Card className={classes.card} elevation={0}>
 			<CardContent>
 				<div style={{ textAlign: 'center' }}>
-					<img alt="" src="/SampleBook.png" width="120px" height="180px" />
+					<img alt="" src="/SampleBook.png" className={classes.imgCard} />
 				</div>
 				<Typography variant="body2" style={{ fontWeight: 'bold' }} component="p">
 					How to Win Friends & Influence People

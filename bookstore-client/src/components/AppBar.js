@@ -23,8 +23,11 @@ const styles = (theme) => ({
 		width: '80%'
 	},
 	stylingImg: {
-		width: '130px',
-		height: '30px'
+		// width: '130px',
+		// height: '30px'
+		minWidth: '20%',
+		maxWidth: '25%',
+		maxHeight: '50px'
 	},
 	itemAppbar: {
 		// marginLeft: '10px',
