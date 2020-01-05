@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import AdSlideShow from './AdSlideShow';
-import RowOfBookCard from './RowOfBookCard';
-import TypeRowOfBookCard from './TypeRowOfBookCard';
+import AdSlideShow from '../../components/AdSlideShow';
+import RowOfBookCard from '../../components/RowOfBookCard';
+import TypeRowOfBookCard from '../../components/TypeRowOfBookCard';
 
 const MainContent = () => {
 	return (
@@ -12,6 +12,7 @@ const MainContent = () => {
 			</div>
 			<TypeRowOfBookCard title={'Best sellers in Books'} />
 			<TypeRowOfBookCard title={'Popular Reads'} />
+			<RowOfBookCard />
 			<RowOfBookCard />
 			<RowOfBookCard />
 			<RowOfBookCard />

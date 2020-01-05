@@ -16,8 +16,8 @@ const styles = () => ({
 	},
 	imgCard: {
 		minWidth: '85%',
-		maxWidth: '180px',
-		height: '230px',
+		maxWidth: '200px',
+		height: '250px',
 		'&:hover': {
 			cursor: 'pointer',
 			boxShadow: '3px 3px 3px 3px #E2E2E2, 3px 3px 3px 3px #E2E2E2'

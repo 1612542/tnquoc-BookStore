@@ -25,7 +25,7 @@ const FilterByPrice = ({ classes }) => {
 						<TextField
 							label="From"
 							variant="outlined"
-							style={{ width: '95px', fontSize: '12px' }}
+							style={{ width: '100%', fontSize: '12px' }}
 							InputProps={{
 								startAdornment: (
 									<InputAdornment position="start">
@@ -44,7 +44,7 @@ const FilterByPrice = ({ classes }) => {
 						<TextField
 							label="To"
 							variant="outlined"
-							style={{ width: '95px', fontSize: '12px' }}
+							style={{ width: '100%', fontSize: '12px' }}
 							InputProps={{
 								startAdornment: (
 									<InputAdornment position="start">

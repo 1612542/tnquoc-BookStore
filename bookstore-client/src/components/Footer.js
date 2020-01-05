@@ -9,7 +9,7 @@ const styles = () => ({
 	footer: {
 		marginTop: '10px',
 		display: 'block',
-		height: '250px',
+		height: '300px',
 		bottom: '0',
 		width: '100%',
 		// backgroundColor: '#00698D',
@@ -18,7 +18,7 @@ const styles = () => ({
 	},
 	divFooter: {
 		display: 'block',
-		height: '250px'
+		height: '300px'
 	},
 	aFooter: {
 		color: 'white',
@@ -29,7 +29,7 @@ const styles = () => ({
 const Footer = ({ classes }) => {
 	return (
 		<div className={classes.footer}>
-			<Container style={{ width: '80%' }}>
+			<Container style={{ width: '85%' }}>
 				<div className={classes.divFooter}>
 					<Grid container direction="row" spacing={2}>
 						<Grid item xs>

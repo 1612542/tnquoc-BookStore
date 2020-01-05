@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import Divider from '@material-ui/core/Divider';
 
-import CustomFilter from './Filter';
-import FilterByPrice from './FilterByPrice';
-import SpecialBookCard from './SpecialBookCard';
+import CustomFilter from '../../components/Filter';
+import FilterByPrice from '../../components/FilterByPrice';
+import SpecialBookCard from '../../components/SpecialBookCard';
 
 const QuickSearchFilterItems = [ 'All', 'Best Seller', 'Most Read', 'The most rating' ];
 const BookCategories = [

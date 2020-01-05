@@ -15,10 +15,13 @@ const styles = (theme) => ({
 	},
 	myToolbar: {
 		paddingLeft: '0',
-		paddingRight: '0'
+		paddingRight: '0',
+		height: '80px'
 	},
 	myContainer: {
-		width: '80%'
+		// width: '85%',
+		minWidth: '1084px',
+		maxWidth: '85%'
 	},
 	stylingImg: {
 		// width: '130px',
