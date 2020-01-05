@@ -2,13 +2,12 @@ import React, { Fragment } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Container from '@material-ui/core/Container';
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
 import Appbar from './components/AppBar';
-import RowOfBookCard from './components/RowOfBookCard';
-import AdSlideShow from './components/AdSlideShow';
+import Footer from './components/Footer';
+import HomeMainContent from './components/HomeMainContent';
+import HomeSideBar from './components/HomeSideBar';
 
 // function App() {
 //   return (
@@ -40,36 +39,34 @@ const styles = () => ({
 		display: 'block',
 		width: '2px',
 		backgroundColor: '#E5E5E5',
-		height: '200vh'
+		height: '320vh'
+	},
+	centerDiv: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		height: '100%'
 	}
 });
 
 const App = ({ classes }) => {
 	return (
-		<div>
-			<div className={classes.root}>
-				<Appbar />
-				<Container style={{ width: '80%' }}>
-					{/* <Typography component="div" style={{ backgroundColor: 'white', height: '100vh' }} /> */}
-					<div style={{ display: 'block', backgroundColor: 'white', height: '200vh' }}>
-						<div style={{ display: 'flex' }}>
-							<div id="sidebar" style={{ paddingLeft: '10px', paddingRight: '10px', width: '25%' }} />
-							<div className={classes.vl} />
-							<Divider orientation="vertical" />
-							<div id="mainContent">
-								<Fragment>
-									<div id="slideshow" style={{ marginBottom: '10px', marginTop: '5px' }}>
-										<AdSlideShow />
-									</div>
-									<RowOfBookCard />
-									<RowOfBookCard />
-									<RowOfBookCard />
-								</Fragment>
-							</div>
+		<div className={classes.root}>
+			<Appbar />
+			<Container style={{ width: '80%' }}>
+				<div style={{ display: 'block', backgroundColor: 'white', height: '320vh' }}>
+					<div style={{ display: 'flex' }}>
+						<div id="sidebar" style={{ paddingLeft: '10px', paddingRight: '10px', width: '30%' }}>
+							<HomeSideBar />
+						</div>
+						<div className={classes.vl} />
+						<div id="mainContent">
+							<HomeMainContent />
 						</div>
 					</div>
-				</Container>
-			</div>
+				</div>
+			</Container>
+			<Footer />
 		</div>
 	);
 };
