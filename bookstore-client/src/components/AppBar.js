@@ -19,15 +19,15 @@ const styles = (theme) => ({
 		height: '80px'
 	},
 	myContainer: {
-		// width: '85%',
-		minWidth: '1084px',
-		maxWidth: '85%'
+		width: '1100px',
+		// minWidth: '1084px',
+		// maxWidth: '85%'
 	},
 	stylingImg: {
 		// width: '130px',
 		// height: '30px'
-		minWidth: '20%',
-		maxWidth: '25%',
+		minWidth: '250px',
+		maxWidth: '300px',
 		maxHeight: '50px'
 	},
 	itemAppbar: {
