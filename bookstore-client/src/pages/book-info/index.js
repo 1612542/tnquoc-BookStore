@@ -6,6 +6,7 @@ import BookDetailInfo from './book-detail-info';
 import BookGeneralInfo from './book-general-info';
 import BookIntroduce from './book-introduce';
 import BookRelated from './book-related';
+import BookReview from './book-review';
 
 const styles = () => ({
 	myContainer: {
@@ -23,6 +24,7 @@ const BookInfo = ({ classes }) => {
 				<BookDetailInfo />
 				<BookIntroduce />
 				<BookRelated />
+				<BookReview />
 			</Container>
 		</Fragment>
 	);

@@ -19,7 +19,7 @@ const styles = (theme) => ({
 		height: '80px'
 	},
 	myContainer: {
-		width: '1100px',
+		width: '1100px'
 		// minWidth: '1084px',
 		// maxWidth: '85%'
 	},
@@ -33,8 +33,8 @@ const styles = (theme) => ({
 	itemAppbar: {
 		// marginLeft: '10px',
 		// marginRight: '10px'
-		marginLeft: theme.spacing.unit * 2,
-		marginRight: theme.spacing.unit * 2
+		marginLeft: theme.spacing(2),
+		marginRight: theme.spacing(2)
 	},
 	aAppbar: {
 		textDecoration: 'none',
