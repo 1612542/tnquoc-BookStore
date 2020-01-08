@@ -7,7 +7,7 @@ import TypeRowOfBookCard from '../../components/TypeRowOfBookCard';
 const MainContent = () => {
 	return (
 		<Fragment>
-			<div id="slideshow" style={{ marginBottom: '10px', marginTop: '5px' }}>
+			<div id="slideshow" style={{ marginBottom: '10px' }}>
 				<AdSlideShow />
 			</div>
 			<TypeRowOfBookCard title={'Best sellers in Books'} />

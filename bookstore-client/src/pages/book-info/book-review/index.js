@@ -8,7 +8,7 @@ import UserRating from './UserRating';
 const styles = () => ({
 	containerDiv: {
 		backgroundColor: 'white',
-		height: '730px',
+		height: '300px',
 		width: '100%',
 		padding: '10px 20px',
 		marginBottom: '20px'
@@ -37,7 +37,6 @@ const BookReview = ({ classes }) => {
 	return (
 		<div className={classes.containerDiv}>
 			<TitleWithStyle title={'Customer Reviews'} />
-			<DynamicratingStar />
 			<UserRating outputColor={'green'} />
 		</div>
 	);

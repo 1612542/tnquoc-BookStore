@@ -30,7 +30,10 @@ const styles = () => ({
 	},
 	btnToolbar: {
 		backgroundColor: '#051042',
-		color: 'white'
+		color: 'white',
+		'&:hover': {
+			backgroundColor: 'orange'
+		}
 	}
 });
 

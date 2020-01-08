@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import { withStyles } from '@material-ui/core/styles';
 
 import Appbar from './components/AppBar';
 import Footer from './components/Footer';
-import Home from './pages/home';
-import BookDetail from './pages/book-info';
+import TabRoute from './components/TapRoute';
+import routes from './routes';
 
 // function App() {
 //   return (
@@ -38,12 +39,14 @@ const styles = () => ({
 
 const App = ({ classes }) => {
 	return (
-		<div className={classes.root}>
-			<Appbar />
-			{/* <Home /> */}
-			<BookDetail />
-			<Footer />
-		</div>
+		<Router>
+			<div className={classes.root}>
+				<Appbar />
+				<TabRoute />
+				<Switch>{routes.map((route) => route)}</Switch>
+				<Footer />
+			</div>
+		</Router>
 	);
 };
 

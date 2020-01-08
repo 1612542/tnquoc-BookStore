@@ -29,7 +29,7 @@ const styles = () => ({
 const Footer = ({ classes }) => {
 	return (
 		<div className={classes.footer}>
-			<Container style={{ width: '85%' }}>
+			<Container style={{ width: '1100px' }}>
 				<div className={classes.divFooter}>
 					<Grid container direction="row" spacing={2}>
 						<Grid item xs>
@@ -54,7 +54,7 @@ const Footer = ({ classes }) => {
 							</p>
 							<p>
 								<a className={classes.aFooter} href="">
-									Store aolicy
+									Store Policy
 								</a>
 							</p>
 							<p>

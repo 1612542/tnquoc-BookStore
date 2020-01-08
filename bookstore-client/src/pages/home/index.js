@@ -20,7 +20,7 @@ const styles = () => ({
 		height: '100%'
 	},
 	myContainer: {
-		width: '1100px',
+		width: '1100px'
 		// minWidth: '1084px',
 		// maxWidth: '85%'
 	}
@@ -29,7 +29,7 @@ const styles = () => ({
 const Home = ({ classes }) => {
 	return (
 		<Container className={classes.myContainer}>
-			<div style={{ display: 'block', backgroundColor: 'white', height: '2500px' }}>
+			<div style={{ display: 'block', backgroundColor: 'white', height: '2500px', marginTop: '15px' }}>
 				<div style={{ display: 'flex' }}>
 					<div id="sidebar" style={{ paddingLeft: '10px', paddingRight: '10px', width: '30%' }}>
 						<HomeSideBar />
