@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
+import { Link } from 'react-router-dom';
 import PersonIcon from '@material-ui/icons/Person';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -130,7 +131,9 @@ const Appbar = ({ classes }) => {
 								>
 									Cart
 								</Button>
-								<Button color="inherit" variant="outlined" startIcon={<PersonIcon />}>
+								<Button component={Link}
+      to={`login`}
+      onClick={e => e.stopPropagation()}  color="inherit" variant="outlined" startIcon={<PersonIcon />}>
 									Login
 								</Button>
 							</Toolbar>

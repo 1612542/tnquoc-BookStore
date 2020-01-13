@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import TabRoute from './components/TapRoute';
 import routes from './routes';
 
+import Login from './pages/login';
+
 // function App() {
 //   return (
 //     <div className="App">
@@ -41,6 +43,7 @@ const App = ({ classes }) => {
 	return (
 		<Router>
 			<div className={classes.root}>
+				{/* <Login /> */}
 				<Appbar />
 				<TabRoute />
 				<Switch>{routes.map((route) => route)}</Switch>
