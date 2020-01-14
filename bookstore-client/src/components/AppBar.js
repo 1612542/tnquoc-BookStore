@@ -83,6 +83,9 @@ const styles = (theme) => ({
 				width: 250
 			}
 		}
+	},
+	linkStyling: {
+		textDecoration: 'none'
 	}
 });
 
@@ -91,7 +94,9 @@ const Appbar = ({ classes }) => {
 		<AppBar position="static" className={classes.appbarRoot}>
 			<Container className={classes.myContainer}>
 				<Toolbar className={classes.myToolbar}>
-					<img src="/NQBook.png" className={classes.stylingImg} />
+					<Link to="/" className={classes.linkStyling}>
+						<img src="/NQBook.png" className={classes.stylingImg} />
+					</Link>
 					<div style={{ width: '100%' }}>
 						<div style={{ display: 'block', float: 'right' }}>
 							<Toolbar className={classes.myToolbar}>
@@ -131,9 +136,14 @@ const Appbar = ({ classes }) => {
 								>
 									Cart
 								</Button>
-								<Button component={Link}
-      to={`login`}
-      onClick={e => e.stopPropagation()}  color="inherit" variant="outlined" startIcon={<PersonIcon />}>
+								<Button
+									component={Link}
+									to={`login`}
+									onClick={(e) => e.stopPropagation()}
+									color="inherit"
+									variant="outlined"
+									startIcon={<PersonIcon />}
+								>
 									Login
 								</Button>
 							</Toolbar>

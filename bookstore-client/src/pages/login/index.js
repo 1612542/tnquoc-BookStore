@@ -46,10 +46,10 @@ const styles = () => ({
 		padding: 0
 	},
 	imgCard: {
-		width: '70%',
-		height: '50px'
-  },
-  btnToolbar: {
+		width: '50%',
+		height: '40px'
+	},
+	btnToolbar: {
 		backgroundColor: '#051042',
 		color: 'white',
 		'&:hover': {
@@ -96,14 +96,20 @@ const Login = ({ classes }) => {
 								>
 									Sign in
 								</p>
-								<TextField required style={{ width: '100%', marginTop: ' 10px' }} label="User name" value={userName} onChange={e=>setUserName(e.target.value)} />
+								<TextField
+									required
+									style={{ width: '100%', marginTop: ' 10px' }}
+									label="User name"
+									value={userName}
+									onChange={(e) => setUserName(e.target.value)}
+								/>
 								<TextField
 									required
 									style={{ width: '100%', marginTop: ' 20px' }}
 									label="Password"
-                  type="password"
-                  value={password}
-                  onChange={e=>setPassword(e.target.value)}
+									type="password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
 								/>
 								<div
 									style={{
@@ -115,7 +121,7 @@ const Login = ({ classes }) => {
 										style={{
 											textDecoration: 'none',
 											fontWeight: 'bold',
-											color: 'skyblue'
+											color: 'blue'
 										}}
 									>
 										Create a new account
@@ -124,10 +130,21 @@ const Login = ({ classes }) => {
 							</div>
 						</CardContent>
 						<div style={{ padding: '5px 20px', textAlign: 'right' }}>
-							<Button size="medium" variant="contained" style={{ marginRight: '10px' }}>
+							<Button
+								size="medium"
+								variant="contained"
+								style={{ marginRight: '10px' }}
+								onClick={() => window.history.go(-1)}
+							>
 								Cancel
 							</Button>
-							<Button className={classes.btnToolbar} size="medium" variant="contained" color="primary" disabled={!userName || !password}>
+							<Button
+								className={classes.btnToolbar}
+								size="medium"
+								variant="contained"
+								color="primary"
+								disabled={!userName || !password}
+							>
 								Login
 							</Button>
 						</div>

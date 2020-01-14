@@ -44,10 +44,10 @@ const App = ({ classes }) => {
 		<Router>
 			<div className={classes.root}>
 				{/* <Login /> */}
-				<Appbar />
-				<TabRoute />
-				<Switch>{routes.map((route) => route)}</Switch>
-				<Footer />
+				{/* <Appbar />
+				<TabRoute /> */}
+				<Switch>{routes}</Switch>
+				{/* <Footer /> */}
 			</div>
 		</Router>
 	);
