@@ -59,6 +59,8 @@ const styles = () => ({
 });
 
 const Login = ({ classes }) => {
+	const [ isLoggedIn, setLoggedIn ] = useState(false);
+	const [ isError, setIsError ] = useState(false);
 	const [ userName, setUserName ] = useState('');
 	const [ password, setPassword ] = useState('');
 
