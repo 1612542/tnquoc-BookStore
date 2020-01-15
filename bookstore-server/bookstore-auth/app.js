@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
 var cors = require('cors');
-require('./middle-ware/passport');
+require('./middleware/passport');
 
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/authentication');
