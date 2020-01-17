@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Link } from 'react-router-dom';
@@ -25,22 +25,25 @@ const styles = () => ({
 	}
 });
 
-const BookCard = ({ classes }) => {
+const BookCard = ({ book, classes }) => {
+	if (!book) return <Fragment />;
+	const { id } = book;
+
 	return (
-		<Link to="/books" className={classes.linkStyling}>
+		<Link to={`/books/${id}`} className={classes.linkStyling}>
 			<Card className={classes.card} elevation={0}>
 				<CardContent>
 					<div style={{ textAlign: 'center' }}>
-						<img alt="" src="/SampleBook.png" className={classes.imgCard} />
+						<img alt="" src={book.imgSrc} className={classes.imgCard} />
 					</div>
 					<Typography variant="body2" style={{ fontWeight: 'bold' }} component="p">
-						How to Win Friends & Influence People
+						{book.bookName}
 					</Typography>
 					<Typography variant="body2" color="textSecondary" component="p">
-						Dale Carnegie
+						{book.author}
 					</Typography>
 					<Typography variant="h6" color="primary">
-						$100
+						${book.price}
 					</Typography>
 				</CardContent>
 			</Card>

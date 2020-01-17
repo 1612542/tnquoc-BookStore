@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -27,6 +28,17 @@ const styles = () => ({
 });
 
 const Home = ({ classes }) => {
+	const [ books, setBooks ] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get('http://localhost:8080/home')
+			.then((res) => {
+				setBooks(res.data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
+
 	return (
 		<Container className={classes.myContainer}>
 			<div style={{ display: 'block', backgroundColor: 'white', height: '2500px', marginTop: '15px' }}>
@@ -36,7 +48,7 @@ const Home = ({ classes }) => {
 					</div>
 					<div className={classes.vl} />
 					<div id="mainContent">
-						<HomeMainContent />
+						<HomeMainContent data={books} />
 					</div>
 				</div>
 			</div>

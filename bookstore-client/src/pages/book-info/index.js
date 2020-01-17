@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import axios from 'axios';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -16,12 +17,24 @@ const styles = () => ({
 	}
 });
 
-const BookInfo = ({ classes }) => {
+const BookInfo = ({ classes, match: { params } }) => {
+	const { id } = params;
+	const [ book, setBook ] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get(`http://localhost:8080/home/${id}`)
+			.then((res) => {
+				setBook(res.data);
+			})
+			.catch((err) => console.log(err));
+	}, []);
+
 	return (
 		<Fragment>
 			<Container className={classes.myContainer}>
-				<BookGeneralInfo />
-				<BookDetailInfo />
+				<BookGeneralInfo data={book} />
+				<BookDetailInfo data={book} />
 				<BookIntroduce />
 				<BookRelated />
 				<BookReview />

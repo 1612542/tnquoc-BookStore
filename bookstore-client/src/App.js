@@ -46,8 +46,8 @@ const App = ({ classes }) => {
 				{/* <Login /> */}
 				{/* <Appbar />
 				<TabRoute /> */}
-				<Switch>{routes}</Switch>
 				{/* <Footer /> */}
+				<Switch>{routes}</Switch>
 			</div>
 		</Router>
 	);
