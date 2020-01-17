@@ -14,21 +14,24 @@ const styles = () => ({
 	}
 });
 
-const similarGenres = [
-	<BookCard />,
-	<BookCard />,
-	<BookCard />,
-	<BookCard />,
-	<BookCard />,
-	<BookCard />,
-	<BookCard />,
-	'abc',
-	<BookCard />
-];
+// const similarGenres = [
+// 	<BookCard />,
+// 	<BookCard />,
+// 	<BookCard />,
+// 	<BookCard />,
+// 	<BookCard />,
+// 	<BookCard />,
+// 	<BookCard />,
+// 	'abc',
+// 	<BookCard />
+// ];
 
-const similarAuthor = [ <BookCard />, <BookCard />, <BookCard /> ];
+// const similarAuthor = [ <BookCard />, <BookCard />, <BookCard /> ];
 
-const BookRelated = ({ classes }) => {
+const BookRelated = ({ book, classes }) => {
+	const similarGenres = [ <BookCard book={book} /> ];
+	const similarAuthor = [ <BookCard book={book} /> ];
+
 	return (
 		<div className={classes.containerDiv}>
 			<BookCarousel title={'Similar Genres'} data={similarGenres} />

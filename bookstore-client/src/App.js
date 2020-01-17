@@ -43,10 +43,6 @@ const App = ({ classes }) => {
 	return (
 		<Router>
 			<div className={classes.root}>
-				{/* <Login /> */}
-				{/* <Appbar />
-				<TabRoute /> */}
-				{/* <Footer /> */}
 				<Switch>{routes}</Switch>
 			</div>
 		</Router>

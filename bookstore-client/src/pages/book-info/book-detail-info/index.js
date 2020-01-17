@@ -19,11 +19,11 @@ const styles = () => ({
 	}
 });
 
-const BookDetailInfo = ({ classes }) => {
+const BookDetailInfo = ({ book, classes }) => {
 	return (
 		<div className={classes.divStyling}>
 			<h2 className={classes.temp}>Book Details</h2>
-			<TableDetail />
+			<TableDetail book={book} />
 		</div>
 	);
 };

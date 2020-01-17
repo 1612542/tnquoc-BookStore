@@ -89,7 +89,7 @@ const styles = (theme) => ({
 	}
 });
 
-const Appbar = ({ classes }) => {
+const Appbar = ({ classes, token }) => {
 	return (
 		<AppBar position="static" className={classes.appbarRoot}>
 			<Container className={classes.myContainer}>
@@ -100,21 +100,6 @@ const Appbar = ({ classes }) => {
 					<div style={{ width: '100%' }}>
 						<div style={{ display: 'block', float: 'right' }}>
 							<Toolbar className={classes.myToolbar}>
-								{/* <Typography variant="h6" className={classes.itemAppbar}>
-									<a href="#" className={classes.aAppbar}>
-										Bookstore
-									</a>
-								</Typography>
-								<Typography variant="h6" className={classes.itemAppbar}>
-									<a href="#" className={classes.aAppbar}>
-										Events
-									</a>
-								</Typography>
-								<Typography variant="h6" className={classes.itemAppbar}>
-									<a href="#" className={classes.aAppbar}>
-										About
-									</a>
-								</Typography> */}
 								<div className={classes.search}>
 									<div className={classes.searchIcon}>
 										<SearchIcon />
@@ -136,16 +121,20 @@ const Appbar = ({ classes }) => {
 								>
 									Cart
 								</Button>
-								<Button
-									component={Link}
-									to={`login`}
-									onClick={(e) => e.stopPropagation()}
-									color="inherit"
-									variant="outlined"
-									startIcon={<PersonIcon />}
-								>
-									Login
-								</Button>
+								{token ? (
+									<PersonIcon />
+								) : (
+									<Button
+										component={Link}
+										to={`login`}
+										onClick={(e) => e.stopPropagation()}
+										color="inherit"
+										variant="outlined"
+										startIcon={<PersonIcon />}
+									>
+										Login
+									</Button>
+								)}
 							</Toolbar>
 						</div>
 					</div>

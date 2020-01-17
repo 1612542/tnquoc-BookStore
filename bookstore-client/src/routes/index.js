@@ -8,8 +8,10 @@ import LoginView from '../pages/login';
 
 const Routes = [
 	<Route key="rec_0" exact path="/" render={() => <Redirect to="/home" />} />,
-	<Route key="home" exact path="/home" render={() => <BaseLayout Component={<Home />} />} />,
-	<Route key="categories" exact path="/books/:id" render={() => <BaseLayout Component={<BookInfo />} />} />,
+	// <Route key="home" exact path="/home" render={() => <BaseLayout Component={<Home />} />} />,
+	// <Route key="categories" exact path="/books/:id" render={() => <BaseLayout Component={<BookInfo />} />} />,
+	<Route key="home" exact path="/home" component={Home} />,
+	<Route key="categories" exact path="/books/:id" component={BookInfo} />,
 	<Route key="login" exact path="/login" component={LoginView} />
 ];
 

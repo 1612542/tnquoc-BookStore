@@ -3,6 +3,9 @@ import axios from 'axios';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 
+import Appbar from '../../components/AppBar';
+import Footer from '../../components/Footer';
+import TabRoutes from '../../components/TapRoute';
 import BookDetailInfo from './book-detail-info';
 import BookGeneralInfo from './book-general-info';
 import BookIntroduce from './book-introduce';
@@ -17,29 +20,36 @@ const styles = () => ({
 	}
 });
 
-const BookInfo = ({ classes, match: { params } }) => {
+const BookInfo = ({ classes, match: { params }, BaseLayout }) => {
 	const { id } = params;
-	const [ book, setBook ] = useState([]);
+	const [ book, setBook ] = useState({});
 
 	useEffect(() => {
 		axios
 			.get(`http://localhost:8080/home/${id}`)
 			.then((res) => {
-				setBook(res.data);
+				setBook(res.data[0]);
 			})
 			.catch((err) => console.log(err));
 	}, []);
 
+	if (!book) return <Fragment />;
+
 	return (
-		<Fragment>
-			<Container className={classes.myContainer}>
-				<BookGeneralInfo data={book} />
-				<BookDetailInfo data={book} />
-				<BookIntroduce />
-				<BookRelated />
-				<BookReview />
-			</Container>
-		</Fragment>
+		<div>
+			<Appbar />
+			<TabRoutes />
+			<Fragment>
+				<Container className={classes.myContainer}>
+					<BookGeneralInfo book={book} />
+					<BookDetailInfo book={book} />
+					<BookIntroduce />
+					<BookRelated book={book} />
+					<BookReview />
+				</Container>
+			</Fragment>
+			<Footer />
+		</div>
 	);
 };
 

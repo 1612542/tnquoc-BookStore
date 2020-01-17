@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import { Redirect, Route } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -59,10 +61,22 @@ const styles = () => ({
 });
 
 const Login = ({ classes }) => {
-	const [ isLoggedIn, setLoggedIn ] = useState(false);
+	const [ token, setToken ] = useState('');
 	const [ isError, setIsError ] = useState(false);
 	const [ userName, setUserName ] = useState('');
 	const [ password, setPassword ] = useState('');
+
+	const submitForm = () => {
+		axios
+			.post('http://localhost:8080/authentication/login', { username: userName, password: password })
+			.then((res) => {
+				setToken(res.data);
+				console.log(token);
+			})
+			.catch((err) => console.log(err));
+	};
+
+	if (token) return <Redirect to={{ pathname: '/home', state: { token: token } }} />;
 
 	return (
 		<div style={{ position: 'relative' }}>
@@ -145,6 +159,7 @@ const Login = ({ classes }) => {
 								size="medium"
 								variant="contained"
 								color="primary"
+								onClick={submitForm}
 								disabled={!userName || !password}
 							>
 								Login

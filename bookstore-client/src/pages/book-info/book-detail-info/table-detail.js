@@ -35,37 +35,37 @@ const styles = () => ({
 	}
 });
 
-const TableDetail = ({ classes }) => {
+const TableDetail = ({ book, classes }) => {
 	return (
 		<table className={classes.table} rules="all">
 			<tbody>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Name</td>
-					<td className={classes.secondCol}>{BookDetailData['name']}</td>
+					<td className={classes.secondCol}>{book.bookName}</td>
 				</tr>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Author</td>
-					<td className={classes.secondCol}>{BookDetailData['author']}</td>
+					<td className={classes.secondCol}>{book.author}</td>
 				</tr>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Publisher</td>
-					<td className={classes.secondCol}>{BookDetailData['publisher']}</td>
+					<td className={classes.secondCol}>{book.publisher}</td>
 				</tr>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Publication Date</td>
-					<td className={classes.secondCol}>{BookDetailData['publicationDate']}</td>
+					<td className={classes.secondCol}>{book.publisherDate}</td>
 				</tr>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Language</td>
-					<td className={classes.secondCol}>{BookDetailData['language']}</td>
+					<td className={classes.secondCol}>{book.languages}</td>
 				</tr>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Size</td>
-					<td className={classes.secondCol}>{BookDetailData['size']}</td>
+					<td className={classes.secondCol}>{book.size}</td>
 				</tr>
 				<tr className={classes.trStyling}>
 					<td className={classes.firstCol}>Pages</td>
-					<td className={classes.secondCol}>{BookDetailData['pages']}</td>
+					<td className={classes.secondCol}>{book.pages}</td>
 				</tr>
 			</tbody>
 		</table>
