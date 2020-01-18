@@ -4,9 +4,11 @@ const BookModel = require('../models/books/books.model');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	// res.send('respond with a resource');
-	// res.json(BookModel.getListBook(limit, offset));
 	BookModel.getListBook().then((data) => res.send(data)).catch((err) => console.log(err));
+});
+
+router.get('/:id', function(req, res, next) {
+	BookModel.getBookById(req.params.id).then((data) => res.send(data)).catch((err) => console.log(err));
 });
 
 module.exports = router;

@@ -4,6 +4,9 @@ module.exports = {
 	getListBook: () => {
 		return db.load(`select * from books`);
 	},
+	getBookById: (id) => {
+		return db.load(`select * from books where id = ${id}`);
+	},
 	query: (limit, offset, name) => {
 		return db.load(
 			`select user.username, user.displayName, user.tutorId, user.email, user.phone, user.id, user.lock  from user where username like '%${name}%' or displayName like '%${name}%' limit ${limit} offset ${offset}`
